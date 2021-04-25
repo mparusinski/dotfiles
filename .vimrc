@@ -20,7 +20,7 @@ set encoding=utf-8
 set hlsearch
 
 " Use jk to quickly escape back to normal mode 
-inoremap <C-d> <Esc>
+imap jk <Esc>
 
 " Default identation
 set tabstop=4
