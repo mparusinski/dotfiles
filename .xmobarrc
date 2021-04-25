@@ -1,0 +1,76 @@
+Config {
+	-- appearance
+	  font = 	"xft:Hermit:medium:size=11:antialias=true"
+	, bgColor = 	"#161821"
+	, fgColor =	"#c6c8d1"
+	, position =	Top
+	, border =	BottomB
+	, borderColor = "#478dad"
+
+	-- layout
+	, sepChar = "%"	-- delineator between plugin names and straight text
+	, alignSep = "}{" -- separator between left-right alignment
+	, template = "%StdinReader% }{ %battery% | %multicpu% | %multicoretemp% | %memory% | %date% "
+
+	-- general behavior
+	, lowerOnStart = True
+	, hideOnStart = False
+	, allDesktops = True
+	, pickBroadest = False
+	, persistent = True -- enable/disable hiding (True = disabled)
+
+	-- plugins
+	--   Numbers can be automatically colored according to their value. xmobar
+	--   decides color based on a three-tier/two-cutoff system, controlled by
+	--   command options:
+	--     --Low sets the low cutoff
+	--     --High sets the high cutoff
+	--
+	--     --low sets the color below --Low cutoff
+	--     --normal sets the color between --Low and --High cutoffs
+	--     --High sets the color above --High cutoff
+	--
+	--   The --template option controls how the plugin is displayed. Text
+	--   color can be set by enclosing in <fc></fc> tags. For more details
+	--   see http://projects.haskell.org/xmobar/#system-monitor-plugins.
+	, commands =
+		-- network activity monitor (dynamic interface resolution)
+		[ Run MultiCpu		[ "--template", "Cpu: <total>%"
+					, "--Low", 	"50"	-- units %
+					, "--High", 	"85"	-- units %
+					, "--low",	"darkgreen"
+					, "--normal",	"darkorange"
+					, "--high",	"darkred"
+					] 10
+		, Run MultiCoreTemp	[ "--template", "Temp: <avg> C"
+					, "--Low",	"70"	-- units 
+					, "--High", 	"85"	-- units 
+					, "--low",	"darkgreen"
+					, "--normal",	"darkorange"
+					, "--high",	"darkred"
+					] 50
+		, Run Memory		[ "--template", "Mem: <used>M / <total>M"
+					, "--Low", 	"20480"
+					, "--High",	"28672"
+					, "--low",	"darkgreen"
+					, "--normal",	"darkorange"
+					, "--high",	"darkred"
+					] 10240
+		, Run Battery		[ "--template", "Batt: <acstatus>"
+					, "--Low",	"20"	-- units %
+					, "--High",	"90"	-- units %
+					, "--low",	"darkred"
+					, "--normal", 	"darkorange"
+					, "--high",	"darkgreen"
+					, "--" -- battery specific options
+						-- discharging status
+						, "-o", "<left>% (<timeleft>)"
+						-- AC "on" status
+						, "-O", "<fc=#daa520>Charging</fc>"
+						-- charged status
+						, "-i", "<fc=#006000>Charged</fc>"
+					] 50
+		, Run Date		"<fc=#ABABAB>%F (%a) %T</fc>" "date" 10
+		, Run StdinReader
+		]
+	}
