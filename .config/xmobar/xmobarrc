@@ -1,0 +1,43 @@
+Config { font = "xft:Bitstream Vera Sans Mono:size=11:antialias=true"
+       , borderColor = "black"
+       , border = TopB
+       , bgColor = "#2E3440"
+       , fgColor = "#ECEFF4"
+       , position = TopSize L 100 24
+       , commands = [ Run Cpu       [ "--template", "<fc=#88C0D0>CPU </fc><total>%"
+                                    , "--Low"     , "50"
+                                    , "--High"    , "85"
+                                    , "--low"     , "#A3BE8C"
+                                    , "--normal"  , "#EBCB8B"
+                                    , "--high"    , "#BF616A"
+                                    ] 30
+                    , Run Memory    [ "--template", "<fc=#88C0D0>MEM </fc><usedratio>%"
+                                    , "--Low"     , "50"
+                                    , "--High"    , "85"
+                                    , "--low"     , "#A3BE8C"
+                                    , "--normal"  , "#EBCB8B"
+                                    , "--high"    , "#BF616A"
+                                    ] 30
+                    , Run Date "<fc=#88C0D0>DATE </fc>%d/%m/%y %H:%M" "date" 600
+                    , Run Battery   [ "--template", "<acstatus>"
+                                    , "--Low"     , "20"    -- units: %
+                                    , "--High"    , "80"    -- units: %
+                                    , "--low"     , "#BF616A"
+                                    , "--normal"  , "#EBCB8B"
+                                    , "--high"    , "#A3BE8C"
+                                    , "--" -- battery specific options
+                                        -- discharging status
+                                        , "-o"  , "<fc=#88C0D0>POWER </fc><left><fc=#ECEFF4>% BATTERY</fc>"
+                                        -- AC "on" status
+                                        , "-O"  , "<fc=#88C0D0>POWER </fc><left><fc=#ECEFF4>% CHARGING</fc>"
+                                        -- charged status
+                                        , "-i"  , "<fc=#88C0D0>POWER </fc><left><fc=#ECEFF4>% CHARGED</fc>"
+                                    ] 30
+                    , Run Com "uname" ["-r"] "" 36000
+                    , Run Alsa "default" "master" []
+                    , Run StdinReader
+                    ]
+       , sepChar = "%"
+       , alignSep = "}{"
+       , template = "%StdinReader% }{ %cpu% | %memory% | %battery% | %date% | <fc=#88C0D0>KERN</fc> %uname% | <fc=#88C0D0>VOLUME</fc> %alsa% "
+}
