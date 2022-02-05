@@ -1,0 +1,1 @@
+alias config='/usr/bin/git --git-dir=/var/home/michalparusinski/.cfg/ --work-tree=/var/home/michalparusinski'
