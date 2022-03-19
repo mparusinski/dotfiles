@@ -18,7 +18,7 @@ main = do
     xmproc1 <- spawnPipe ("xmobar -x 1 $HOME/.config/xmobar/xmobarrc")
     xmproc2 <- spawnPipe ("xmobar -x 2 $HOME/.config/xmobar/xmobarrc")
     xmonad $ ewmh $ docks $ defaultConfig
-        { terminal           = "kitty"
+        { terminal           = "st"
         , modMask            = myModMask
         , manageHook         = myManageHook <+> manageHook defaultConfig
         , layoutHook         = myLayoutHook
