@@ -1,8 +1,8 @@
-Config { font = "xft:Bitstream Vera Sans Mono:size=11:antialias=true"
+Config { font = "xft:Bitstream Vera Sans Mono:size=10:antialias=true"
        , borderColor = "black"
        , border = TopB
-       , bgColor = "#2E3440"
-       , fgColor = "#ECEFF4"
+--        , bgColor = "#2E3440"
+--       , fgColor = "#ECEFF4"
        , position = TopSize L 100 24
        , commands = [ Run Cpu       [ "--template", "<fc=#88C0D0>CPU </fc><total>%"
                                     , "--Low"     , "50"
@@ -39,5 +39,5 @@ Config { font = "xft:Bitstream Vera Sans Mono:size=11:antialias=true"
                     ]
        , sepChar = "%"
        , alignSep = "}{"
-       , template = "%StdinReader% }{ %cpu% | %memory% | %battery% | %date% | <fc=#88C0D0>KERN</fc> %uname% | <fc=#88C0D0>VOLUME</fc> %alsa% "
+       , template = "%StdinReader% }{ %cpu% | %memory% | %battery% | %date% | <fc=#88C0D0>KERN</fc> %uname% "
 }

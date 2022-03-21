@@ -1,0 +1,10 @@
+#!/bin/bash
+# vim: syntax=bash:et:sw=2:ts=2
+
+amixer -D pulse sset Master toggle
+# if amixer -D pulse get Master | grep -e '\[off\]';
+# then
+#   notify-send -t 1000 "Muted"
+# else
+#   notify-send -t 1000 "Unmuted"
+# fi

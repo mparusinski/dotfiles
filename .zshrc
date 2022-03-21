@@ -73,6 +73,7 @@ ZSH_THEME="robbyrussell"
 plugins=(git wd fzf)
 
 source $ZSH/oh-my-zsh.sh
+set -o vi
 
 # User configuration
 

@@ -18,15 +18,15 @@ main = do
     xmproc1 <- spawnPipe ("xmobar -x 1 $HOME/.config/xmobar/xmobarrc")
     xmproc2 <- spawnPipe ("xmobar -x 2 $HOME/.config/xmobar/xmobarrc")
     xmonad $ ewmh $ docks $ defaultConfig
-        { terminal           = "kitty"
+        { terminal           = "st"
         , modMask            = myModMask
         , manageHook         = myManageHook <+> manageHook defaultConfig
         , layoutHook         = myLayoutHook
         , logHook            = myLogHook [xmproc0, xmproc1, xmproc2]
         , borderWidth        = 2
         , workspaces         = myWorkspaces
-        , normalBorderColor  = "#2E3440"
-        , focusedBorderColor = "#BF616A"
+--        , normalBorderColor  = "#2E3440"
+--        , focusedBorderColor = "#BF616A"
         } `additionalKeys` myKeys
 
 myModMask = mod4Mask

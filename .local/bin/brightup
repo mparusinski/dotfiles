@@ -1,0 +1,6 @@
+#!/bin/bash
+# vim: syntax=bash:et:sw=2:ts=2
+
+brightnessctl set 5%+
+# bn=$(brightnessctl -m | cut -d ',' -f 4)
+# notify-send -t 1000 "Brightness $bn"
