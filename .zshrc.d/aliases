@@ -1,3 +1,11 @@
 function config {
     /usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME $@;
 }
+
+alias gp="git push"
+alias gf="git fetch"
+
+function sshagentquick {
+    eval `ssh-agent`
+    ssh-add
+}
