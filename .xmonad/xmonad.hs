@@ -25,8 +25,8 @@ main = do
         , logHook            = myLogHook [xmproc0, xmproc1, xmproc2]
         , borderWidth        = 2
         , workspaces         = myWorkspaces
---        , normalBorderColor  = "#2E3440"
---        , focusedBorderColor = "#BF616A"
+        , normalBorderColor  = "#2E3440"
+        , focusedBorderColor = "#BF616A"
         } `additionalKeys` myKeys
 
 myModMask = mod4Mask
