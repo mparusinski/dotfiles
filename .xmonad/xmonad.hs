@@ -53,11 +53,11 @@ myManageHook = composeAll $
 
 myKeys :: [((KeyMask, KeySym), X ())]
 myKeys = 
-    [ ((0, xF86XK_AudioRaiseVolume),   spawn "volumeup")
-    , ((0, xF86XK_AudioLowerVolume),   spawn "volumedown")
-    , ((0, xF86XK_AudioMute),          spawn "volumemute")
-    , ((0, xF86XK_MonBrightnessUp),    spawn "brightup")
-    , ((0, xF86XK_MonBrightnessDown),  spawn "brightdown")
+    [ ((0, xF86XK_AudioRaiseVolume),   spawn ".local/bin/volumeup")
+    , ((0, xF86XK_AudioLowerVolume),   spawn ".local/bin/volumedown")
+    , ((0, xF86XK_AudioMute),          spawn ".local/bin/volumemute")
+    , ((0, xF86XK_MonBrightnessUp),    spawn ".local/bin/brightup")
+    , ((0, xF86XK_MonBrightnessDown),  spawn ".local/bin/brightdown")
     , ((myModMask, xK_b),              sendMessage ToggleStruts) 
 --    , ((mod4Mask .|. shiftMask, xK_q), spawn "dpower")
     ]
