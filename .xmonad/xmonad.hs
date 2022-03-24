@@ -5,6 +5,7 @@ import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.EwmhDesktops (ewmh)
 import XMonad.Hooks.ManageDocks
 import XMonad.Hooks.ManageHelpers
+import XMonad.Layout.Spacing
 import XMonad.Layout.NoBorders (smartBorders)
 import XMonad.Util.Run (spawnPipe)
 import XMonad.Util.EZConfig (additionalKeys)
@@ -33,10 +34,11 @@ myModMask = mod4Mask
 
 myWorkspaces = map show [1..9]
 
-myLayoutHook = avoidStruts $ smartBorders $ tall ||| wide ||| full
+myLayoutHook = spacingParams $ avoidStruts $ smartBorders $ tall ||| wide ||| full
     where tall = Tall 1 0.03 0.5
           wide = Mirror tall
           full = Full
+          spacingParams = spacingRaw True (Border 5 5 5 5) True (Border 5 5 5 5) True
 
 myLogHookSingle xmproc =  dynamicLogWithPP xmobarPP
     { ppOutput = hPutStrLn xmproc
