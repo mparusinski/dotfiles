@@ -4,8 +4,9 @@ function config {
 
 alias gp="git push"
 alias gf="git fetch"
+alias gc="git commit"
 
-function sshagentquick {
+function saq {
     eval `ssh-agent`
     ssh-add
 }
