@@ -5,6 +5,7 @@ import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.EwmhDesktops (ewmh)
 import XMonad.Hooks.ManageDocks
 import XMonad.Hooks.ManageHelpers
+import XMonad.Layout.Spacing
 import XMonad.Layout.NoBorders (smartBorders)
 import XMonad.Util.Run (spawnPipe)
 import XMonad.Util.EZConfig (additionalKeys)
@@ -25,18 +26,19 @@ main = do
         , logHook            = myLogHook [xmproc0, xmproc1, xmproc2]
         , borderWidth        = 2
         , workspaces         = myWorkspaces
---        , normalBorderColor  = "#2E3440"
---        , focusedBorderColor = "#BF616A"
+        , normalBorderColor  = "#2E3440"
+        , focusedBorderColor = "#BF616A"
         } `additionalKeys` myKeys
 
 myModMask = mod4Mask
 
 myWorkspaces = map show [1..9]
 
-myLayoutHook = avoidStruts $ smartBorders $ tall ||| wide ||| full
+myLayoutHook = spacingParams $ avoidStruts $ smartBorders $ tall ||| wide ||| full
     where tall = Tall 1 0.03 0.5
           wide = Mirror tall
           full = Full
+          spacingParams = spacingRaw True (Border 5 5 5 5) True (Border 5 5 5 5) True
 
 myLogHookSingle xmproc =  dynamicLogWithPP xmobarPP
     { ppOutput = hPutStrLn xmproc
@@ -53,11 +55,11 @@ myManageHook = composeAll $
 
 myKeys :: [((KeyMask, KeySym), X ())]
 myKeys = 
-    [ ((0, xF86XK_AudioRaiseVolume),   spawn "volumeup")
-    , ((0, xF86XK_AudioLowerVolume),   spawn "volumedown")
-    , ((0, xF86XK_AudioMute),          spawn "volumemute")
-    , ((0, xF86XK_MonBrightnessUp),    spawn "brightup")
-    , ((0, xF86XK_MonBrightnessDown),  spawn "brightdown")
+    [ ((0, xF86XK_AudioRaiseVolume),   spawn ".local/bin/volumeup")
+    , ((0, xF86XK_AudioLowerVolume),   spawn ".local/bin/volumedown")
+    , ((0, xF86XK_AudioMute),          spawn ".local/bin/volumemute")
+    , ((0, xF86XK_MonBrightnessUp),    spawn ".local/bin/brightup")
+    , ((0, xF86XK_MonBrightnessDown),  spawn ".local/bin/brightdown")
     , ((myModMask, xK_b),              sendMessage ToggleStruts) 
 --    , ((mod4Mask .|. shiftMask, xK_q), spawn "dpower")
     ]

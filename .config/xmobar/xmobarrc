@@ -1,8 +1,8 @@
 Config { font = "xft:Bitstream Vera Sans Mono:size=10:antialias=true"
        , borderColor = "black"
        , border = TopB
---        , bgColor = "#2E3440"
---       , fgColor = "#ECEFF4"
+       , bgColor = "#000000"
+       , fgColor = "#D8DEE9"
        , position = TopSize L 100 24
        , commands = [ Run Cpu       [ "--template", "<fc=#88C0D0>CPU </fc><total>%"
                                     , "--Low"     , "50"
