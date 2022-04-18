@@ -1,0 +1,8 @@
+#! /bin/sh
+
+
+bluetoothctl << EOF
+power on
+scan on
+connect 88:D0:39:DB:BD:54
+EOF
