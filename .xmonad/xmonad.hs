@@ -67,5 +67,6 @@ myKeys =
     , ((0, xF86XK_MonBrightnessUp),    spawn ".local/bin/brightup")
     , ((0, xF86XK_MonBrightnessDown),  spawn ".local/bin/brightdown")
     , ((myModMask, xK_b),              makeFullscreen) 
+    , ((myModMask, xK_y),              spawn "firefox") 
 --    , ((mod4Mask .|. shiftMask, xK_q), spawn "dpower")
     ]

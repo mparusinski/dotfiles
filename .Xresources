@@ -6,7 +6,7 @@ Xft.hinting: 1
 Xft.antialias: 1
 Xft.rgba: rgb
 
-st.font:			-*-dejavu sans mono-*-*-*-*-26-*-*-*-*-*-*-1
+st.font:			-*-dejavu sans mono-*-*-*-*-28-*-*-*-*-*-*-1
 ! st.bold_font:			0
 ! st.background:			#131415
 ! st.foreground:			#A3BAD0

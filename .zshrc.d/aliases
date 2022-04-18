@@ -10,3 +10,5 @@ function saq {
     eval `ssh-agent`
     ssh-add
 }
+
+alias ls='nnn -de'
