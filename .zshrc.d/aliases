@@ -11,7 +11,7 @@ function saq {
     ssh-add
 }
 
-alias ls="nnn -de"
+# alias ls="nnn -de"
 if [ -f /usr/share/nnn/quitcd/quitcd.bash_zsh ]; then
     source /usr/share/nnn/quitcd/quitcd.bash_zsh
 fi
