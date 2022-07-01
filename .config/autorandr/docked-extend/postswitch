@@ -1,0 +1,4 @@
+#!/bin/sh 
+xrdb -merge ~/.Xresources.lowdpi
+feh --bg-scale gu3eq9jjurk81.png
+xmonad --restart
