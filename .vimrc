@@ -9,6 +9,7 @@ call plug#begin()
 "   - Avoid using standard Vim directory names like 'plugin'
 
 Plug 'LnL7/vim-nix'
+Plug 'itspriddle/vim-shellcheck'
 
 " Initialize plugin system
 call plug#end()

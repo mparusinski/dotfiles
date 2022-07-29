@@ -19,7 +19,7 @@ main = do
     xmproc1 <- spawnPipe ("xmobar -x 1 $HOME/.config/xmobar/xmobarrc")
     xmproc2 <- spawnPipe ("xmobar -x 2 $HOME/.config/xmobar/xmobarrc")
     xmonad $ ewmh $ docks $ defaultConfig
-        { terminal           = "st"
+        { terminal           = "kitty"
         , modMask            = myModMask
         , manageHook         = myManageHook <+> manageHook defaultConfig
         , layoutHook         = myLayoutHook
@@ -68,5 +68,6 @@ myKeys =
     , ((0, xF86XK_MonBrightnessDown),  spawn ".local/bin/brightdown")
     , ((myModMask, xK_b),              makeFullscreen) 
     , ((myModMask, xK_y),              spawn "firefox") 
+    , ((myModMask, xK_p),              spawn "rofi -show run") 
 --    , ((mod4Mask .|. shiftMask, xK_q), spawn "dpower")
     ]

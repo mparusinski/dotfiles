@@ -17,24 +17,10 @@ off
 output DisplayPort-1-5
 off
 output HDMI-A-1-1
-off
-output DisplayPort-1-6
 crtc 4
-mode 1920x1080
+mode 3840x2160
 pos 0x0
-rate 60.00
-x-prop-max_bpc 8
-x-prop-non_desktop 0
-x-prop-scaling_mode None
-x-prop-tearfree auto
-x-prop-underscan off
-x-prop-underscan_hborder 0
-x-prop-underscan_vborder 0
-output DisplayPort-1-7
-crtc 5
-mode 1920x1080
-pos 1920x0
-rate 60.00
+rate 29.98
 x-prop-max_bpc 8
 x-prop-non_desktop 0
 x-prop-scaling_mode None
@@ -44,10 +30,10 @@ x-prop-underscan_hborder 0
 x-prop-underscan_vborder 0
 output eDP1
 crtc 0
-mode 1920x1080
+mode 3840x2160
 pos 3840x0
 primary
-rate 59.96
+rate 60.00
 x-prop-broadcast_rgb Automatic
 x-prop-colorspace Default
 x-prop-max_bpc 12
