@@ -6,6 +6,8 @@ alias gp="git push"
 alias gf="git fetch"
 alias gc="git commit"
 
+alias audiomixer='pulsemixer'
+
 function saq {
     eval `ssh-agent`
     ssh-add
