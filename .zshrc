@@ -70,10 +70,9 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git wd fzf)
+plugins=(git wd fzf fzf-alias vi-mode)
 
 source $ZSH/oh-my-zsh.sh
-set -o vi
 
 # User configuration
 
@@ -83,31 +82,23 @@ set -o vi
 # export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
+export EDITOR=vim
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-
-# User specific aliases and functions
-if [ -d ~/.zshrc.d ]; then
-	for rc in ~/.zshrc.d/*; do
-		if [ -f "$rc" ]; then
-			. "$rc"
-		fi
-	done
-fi
-
-unset rc
+# Aliases
+alias zshconfig="vim ~/.zshrc"
+alias vimconfig="vim ~/.vim/vimrc"
+alias xmonadconfig="ghci ~/.config/xmonad/xmonad.hs"
+alias xmobarconfig="vim ~/.config/xmobar/xmobarrc"
+alias kittyconfig="vim ~/.config/kitty/kitty.conf"
+alias ohmyzsh="vim ~/.oh-my-zsh"
+alias ll="ls -l"
+alias am="pulsemixer"
+alias gp="git push"
+alias ga="git add"
+alias gc="git commit"
+alias gd="git diff"
+alias saq="eval \"$(ssh-agent -s)\""
+alias dotfiles="/usr/bin/git --git-dir=$HOME/.cfg/.git --work-tree=$HOME"
