@@ -70,7 +70,7 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git wd fzf fzf-alias vi-mode)
+plugins=(git wd fzf vi-mode)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -101,6 +101,6 @@ alias ga="git add"
 alias gc="git commit"
 alias gd="git diff"
 alias saq="eval \"$(ssh-agent -s)\""
-alias dotfiles="/usr/bin/git --git-dir=$HOME/.cfg/.git --work-tree=$HOME"
+alias dotfiles="/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME"
 alias pacmanconf="sudoedit /etc/pacman.conf"
 alias roficonf="vim /home/michalparusinski/.config/rofi/config.rasi"
